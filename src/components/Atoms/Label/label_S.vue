@@ -1,0 +1,31 @@
+<template>
+  <div class="label">
+    {{text}}
+  </div>
+</template>
+
+<script>
+export default {
+  props:['labelText'],
+  data() {
+    return{
+      text: this.labelText
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.label{
+  font-size: 12px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 1;
+  border: 1px solid #DFDFDF;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  background-color: #F7F7F7;
+}
+</style>

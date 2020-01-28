@@ -1,0 +1,49 @@
+ANTデザインを使用できるようにする
+https://www.npmjs.com/package/ant-design-vue
+
+使い方
+https://www.antdv.com/docs/vue/use-with-vue-cli/
+
+vueでscss使用できるよう
+npm install sass-loader node-sass --save-dev
+
+vue-routerが使用できるように
+npm install vue-router --save-dev
+
+デザイン使用できるようにインストール
+npm i ant-design-vue
+npm install ant-design-vue --save
+
+vueのレンダリングがうまく出来ない（画面が表示されない）
+プロジェクトルートに vue.config.js を追加して、 alias を追加する
+https://qiita.com/ororog/items/cc2a936f9b0796348d50
+
+
+vueコンポーネントを呼び出す
+https://uncle-javascript.com/vue-component
+
+
+
+フォントサイズについて
+L：20px
+M：16px
+S：12px
+
+
+vueで値の渡す方法
+
+親から渡って来た値を記載する
+これは、メソッド呼び出すこともできる？
+props:['getToday','getLastDay','getHoliday','getFromDate','toDateValue'],
+
+
+親はこのようにすることで値を渡すことができる
+<Calendar
+    :class='{is_show:showCalendar}'
+    @sendText="changeText($event,index)"
+    @close="close"
+    @sendDate="selectDate($event)"
+    :getToday="today"
+    :getLastDay="lastDay"
+    :getHoliday="holiday"
+></Calendar>
