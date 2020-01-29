@@ -6,7 +6,7 @@
     </div>
     <div class="listLink__bottom">
       <ul class="listLink__list">
-        <li  v-for="label in minLabel" :key="label">
+        <li class="listLink__item" v-for="label in minLabel" :key="label">
           <LabelS
             :labelText="label"
           ></LabelS>
@@ -50,7 +50,7 @@ export default {
   display: flex;
 }
 .listLink__title{
-  font-size: 12px;
+  font-size: 14px;
   line-height: 22px;
   margin-right: 8px;
 }
@@ -64,11 +64,8 @@ export default {
   color: #9c9c9c;
   line-height: 36px;
 }
-.listLink__anticon{
-  font-size: 8px;
-  color: #9c9c9c;
+.listLink__item{
   margin-right: 4px;
-  line-height: 36px;
 }
 </style>
 

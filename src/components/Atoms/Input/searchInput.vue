@@ -9,13 +9,9 @@ export default {
       
     }
   },
-  created(){
-    this.$emit("enterevent");
-  },
   methods: {
     inputValue(value){
-      console.log(value);// eslint-disable-line
-      this.$emit("enterevent", value);
+      this.$emit("enter-event", value);
     }
   },
 }

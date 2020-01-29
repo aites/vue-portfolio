@@ -1,7 +1,7 @@
 <template>
   <div class="search">
-    <SearchInput @enterevent="getInput"></SearchInput>
-    <SearchButton></SearchButton>
+    <SearchInput @enter-event="getInput"></SearchInput>
+    <SearchButton @click-button="clickSearch"></SearchButton>
   </div>
 </template>
 
@@ -10,17 +10,30 @@ import SearchInput from '../../Atoms/Input/searchInput.vue';
 import SearchButton from '../../Atoms/Button/searchButton.vue';
 
 export default {
+  props:['searchData'],
   components: { SearchInput,SearchButton },
   data(){
     return {
       input: '',
-      project: [],
+      project: this.searchData,
       inputText: '',
     }
   },
   methods:{
-    getInput(text='') {
+    getInput(text=''){
       this.inputText = text;
+    },
+    clickSearch(){
+      if(this.inputText != '')  this.search();
+    },
+    search(){
+      const result = [];
+      this.project.forEach(item => {
+        if (item.title.indexOf(this.inputText) != -1 || item.label.indexOf(this.inputText) != -1){
+          result.push(item);
+        }
+      });
+      this.$emit('search-result', result, this.inputText);
     }
   }
 }

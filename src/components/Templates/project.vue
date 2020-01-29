@@ -1,16 +1,22 @@
 <template>
-  <div>
+  <div class="project">
   <Header
       :headTitle = title
   ></Header>
   <Title
     :titleText="searchTitle"></Title>
-  <div class="sortBox">
-    <Search></Search>
+  <div class="project__searchBox">
+    <Search
+      :searchData="project"
+      @search-result="search"
+    ></Search>
   </div>
-  <LableList
-    :labelList="searchWord"
-  ></LableList>
+  <div class="project__searchLabel">
+    <LableList
+      :labelList="searchWord"
+      :closeIcon="true"
+    ></LableList>
+  </div>
   <ProjectList
     :projectList="project"
   ></ProjectList>
@@ -31,35 +37,54 @@ export default {
     return{
       title: '案件一覧',
       searchTitle: '絞り込み',
-      searchWord: [''],
+      searchWord: [],
       project: [
         {
           title: 'スタディサプリ',
           date:'2018/09 ~ 2020/01', 
           label: ['html','scss','vue.js'],
           image: 'project_1_pc.png',
-          info: '',
+          info: 'エンハンス、リニューアルと対応',
           detail:{
-            language: 'html,scss,vue.js',
-            scale:'',
-            term: '',
-            url:'',
-            development:'',
+            language: 'html,scss,jQuery,vue.js',
+            scale:'50ページ',
+            term: '2018/09 ~ 2020/01',
+            url:'https://shingakunet.com/',
+            development:'glup,git,svn',
+          },
+        },
+        {
+          title: 'リクナビ進学',
+          date:'2017/04 ~ 2018/02', 
+          label: ['html','scss','jQuery'],
+          image: 'project_2_pc.png',
+          info: 'エンハンス、リニューアルと対応',
+          detail:{
+            language: 'html,scss,jQuery,vue.js',
+            scale:'50ページ',
+            term: '2017/04 ~ 2018/02',
+            url:'https://job.rikunabi.com/',
+            development:'glup,git,svn',
           },
         },
       ],
     }
   },
-  watch: {
-    searchWord: function () {
-      console.log('search');// eslint-disable-line
+  methods:{
+    search(result,word){
+      console.log(word);// eslint-disable-line
+      if(this.searchWord.indexOf(word) != -1) this.searchWord.push(word);
+      console.log(this.searchWord);// eslint-disable-line
     }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.sortBox{
+.project__searchLabel{
+  margin-bottom: 8px;
+}
+.project__searchBox{
   margin-top: 12px;
   margin-bottom: 12px;
 }

@@ -1,8 +1,18 @@
 <template>
-  <a-button type="primary" class="searchButton">
+  <a-button type="primary" class="searchButton" @click="clickButton">
     <a-icon type="search" class="searchButton__icon"/>
   </a-button>
 </template>
+
+<script>
+export default {
+  methods:{
+    clickButton(){
+      this.$emit('click-button');
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .searchButton{

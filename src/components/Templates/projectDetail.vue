@@ -6,20 +6,31 @@
     <TaskTitle
       :titleText="taskData.title"
     ></TaskTitle>
-    <LabelList></LabelList>
+    <div class="projectDetail__labelList">
+      <LabelList
+        :labelList="taskData.label"
+        :closeIcon="false"
+      ></LabelList>
+    </div>
     <DetailImage
       :imageName="taskData.image"
     ></DetailImage>
-    <div class="contents">
+    <div class="projectDetail__contents">
+      <p class="projectDetail__contentsTitle">サイトの説明</p>
       {{this.taskData.info}}
     </div>
-    <div class="contents">
+    <div class="projectDetail__contents">
       <ul class="detailList">
-        <li class="detailItem">{{this.taskData.language}}</li>
-        <li class="detailItem">{{this.taskData.scale}}</li>
-        <li class="detailItem">{{this.taskData.term}}</li>
-        <li class="detailItem">{{this.taskData.url}}</li>
-        <li class="detailItem">{{this.taskData.development}}</li>
+        <p class="projectDetail__contentsTitle">使用言語</p>
+        <li class="detailItem">{{this.taskData.detail.language}}</li>
+        <p class="projectDetail__contentsTitle">規模感</p>
+        <li class="detailItem">{{this.taskData.detail.scale}}</li>
+        <p class="projectDetail__contentsTitle">案件対応期間</p>
+        <li class="detailItem">{{this.taskData.detail.term}}</li>
+        <p class="projectDetail__contentsTitle">サイトURL</p>
+        <li class="detailItem">{{this.taskData.detail.url}}</li>
+        <p class="projectDetail__contentsTitle">開発環境</p>
+        <li class="detailItem">{{this.taskData.detail.development}}</li>
       </ul>
     </div>
   </div>
@@ -36,33 +47,41 @@ export default {
   data(){
     return{
       title: '案件詳細',
-      // taskData: {
-      //   title: 'サイトタイトル',
-      //   label: ['html','scss','vue.js'],
-      //   image: 'project_1_pc.png',
-      //   info: '',
-      //   detail:{
-      //     language: 'html,scss,vue.js',
-      //     scale:'',
-      //     term: '',
-      //     url:'',
-      //     development:'',
-      //   },
-      // }
       taskData: this.$route.params.projectData,
     }
   },
   methods: {
-    
+    reload(){
+      this.$router.go({path: this.$router.currentRoute.path, force: true});
+      console.log('search');// eslint-disable-line
+    }
   },
   created(){
-    console.log(this.taskData);// eslint-disable-line
-    console.log(this.$route.params.projectData);// eslint-disable-line
-  }
+    
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-
+.projectDetail__contents{
+  border: 1px solid #707070;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 10px;
+  line-height: 1.3;
+  color: #707070;
+  margin-bottom: 12px;
+}
+.projectDetail__contentsTitle{
+  font-size: 12px;
+  color: #707070;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.projectDetail__labelList{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
 </style>
 

@@ -1,8 +1,8 @@
 <template>
-  <ul class="labelList">
-    <li class="labelItem" v-for="(label,index) of labelDatas" :key="index">
+  <ul class="labelList" v-show="isLabelList()">
+    <li class="labelItem" v-for="(label,index) of labelList" :key="index">
       <Label
-        :labelText = label.text
+        :labelText = label
         :class="lastLabel(index)"
       >
       </Label>
@@ -19,61 +19,28 @@ import Close from '../Atoms/Icon/close.vue';
 
 export default {
   components: { Label,Close },
-  props: ['labelList'],
+  props: ['labelList','closeIcon'],
   data(){
     return{
       // labelData: this.labelList,
-      labelDatas: [
-        {
-          text:'HTML',
-          id:1
-        },
-        {
-          text:'CSS/SCSS',
-          id:2
-        },
-        {
-          text:'ES6',
-          id:3
-        },
-        {
-          text:'Vue.js',
-          id:4
-        },
-        {
-          text:'Jade',
-          id:5
-        },
-        {
-          text:'Velocity',
-          id:6
-        },
-        {
-          text:'firebase',
-          id:7
-        },
-        {
-          text:'react',
-          id:8
-        },
-        {
-          text:'TypeScript',
-          id:9
-        },
-      ],
     }
   },
   methods:{
+    isLabelList(){
+      console.log(this.labelList.length);// eslint-disable-line
+      if(!this.labelList[0]) return false;
+      return true;
+    },
     showClsoeIcon(index){
-      if(index === this.labelDatas.length-1)
-        return true;
+      if(!this.closeIcon) return false;
+      if(index === this.labelList.length-1)  return true;
     },
     lastLabel(index){
-      if(index === this.labelDatas.length-1)
-        return 'labelLast';
+      if(!this.closeIcon) return false;
+      if(index === this.labelList.length-1)  return 'labelLast';
     },
     removeLabel(){
-      this.labelDatas.pop();
+      this.labelList.pop();
     }
   }
 }
@@ -94,10 +61,11 @@ export default {
 }
 .closeIcon{
   position: absolute;
-  top: -8px;
+  padding: 8px;
+  top: -10px;
   bottom: 0;
   right: 0;
-  padding: 8px;
+  height: 24px;
   margin: auto;
 }
 </style>
