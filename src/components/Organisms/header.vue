@@ -60,10 +60,9 @@ export default {
 <style lang="scss" scoped>
 .header{
   display: flex;
-  margin-top: 16px;
+  padding-top: 16px;
   margin-bottom: 16px;
   position: relative;
-  height: 24px;
 }
 .header__menuIcon{
   pointer-events: none;

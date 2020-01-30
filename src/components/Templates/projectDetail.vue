@@ -21,16 +21,26 @@
     </div>
     <div class="projectDetail__contents">
       <ul class="detailList">
-        <p class="projectDetail__contentsTitle">使用言語</p>
-        <li class="detailItem">{{this.taskData.detail.language}}</li>
-        <p class="projectDetail__contentsTitle">規模感</p>
-        <li class="detailItem">{{this.taskData.detail.scale}}</li>
-        <p class="projectDetail__contentsTitle">案件対応期間</p>
-        <li class="detailItem">{{this.taskData.detail.term}}</li>
-        <p class="projectDetail__contentsTitle">サイトURL</p>
-        <li class="detailItem">{{this.taskData.detail.url}}</li>
-        <p class="projectDetail__contentsTitle">開発環境</p>
-        <li class="detailItem">{{this.taskData.detail.development}}</li>
+        <li class="projectDetail__detailItem">
+          <p class="projectDetail__contentsTitle">使用言語</p>
+          {{this.taskData.detail.language}}
+        </li>
+        <li class="projectDetail__detailItem">
+          <p class="projectDetail__contentsTitle">規模感</p>
+          {{this.taskData.detail.scale}}
+        </li>
+        <li class="projectDetail__detailItem">
+          <p class="projectDetail__contentsTitle">案件対応期間</p>
+          {{this.taskData.detail.term}}
+        </li>
+        <li class="projectDetail__detailItem">
+          <p class="projectDetail__contentsTitle">サイトURL</p>
+          <a :href="taskData.detail.url">{{this.taskData.detail.url}}</a>
+        </li>
+        <li class="projectDetail__detailItem">
+          <p class="projectDetail__contentsTitle">開発環境</p>
+          {{this.taskData.detail.development}}
+        </li>
       </ul>
     </div>
   </div>
@@ -82,6 +92,9 @@ export default {
 .projectDetail__labelList{
   margin-top: 8px;
   margin-bottom: 8px;
+}
+.projectDetail__detailItem{
+  margin-bottom: 12px;
 }
 </style>
 

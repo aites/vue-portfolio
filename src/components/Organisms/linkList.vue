@@ -1,6 +1,6 @@
 <template>
   <ul class="linkList">
-    <li v-for="(item,index) in projectArray" :key="index" class="linkListItem">
+    <li v-for="(item,index) in projectList" :key="index" class="linkListItem">
       <router-link :to="{ name: 'project-detail', params: {projectData: item } }">
         <ListLink
           :titleText = item.title
@@ -20,9 +20,9 @@ export default {
   props: ['projectList'],
   data(){
     return{
-      projectArray: this.projectList,
+      // projectArray: this.projectList,
     }
-  }
+  },
 }
 </script>
 

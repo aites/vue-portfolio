@@ -15,7 +15,6 @@ export default {
   data(){
     return {
       input: '',
-      project: this.searchData,
       inputText: '',
     }
   },
@@ -27,13 +26,13 @@ export default {
       if(this.inputText != '')  this.search();
     },
     search(){
-      const result = [];
-      this.project.forEach(item => {
+      const results = [];
+      this.searchData.forEach(item => {
         if (item.title.indexOf(this.inputText) != -1 || item.label.indexOf(this.inputText) != -1){
-          result.push(item);
+          results.push(item);
         }
       });
-      this.$emit('search-result', result, this.inputText);
+      this.$emit('search-result', results, this.inputText);
     }
   }
 }

@@ -6,7 +6,7 @@
         :class="lastLabel(index)"
       >
       </Label>
-      <div class="closeIcon" v-on:click.stop="removeLabel()" v-if="showClsoeIcon(index)">
+      <div class="closeIcon" @click.stop="removeLabel()" v-if="showClsoeIcon(index)">
         <Close></Close>
       </div>
     </li>
@@ -27,7 +27,6 @@ export default {
   },
   methods:{
     isLabelList(){
-      console.log(this.labelList.length);// eslint-disable-line
       if(!this.labelList[0]) return false;
       return true;
     },
@@ -40,7 +39,9 @@ export default {
       if(index === this.labelList.length-1)  return 'labelLast';
     },
     removeLabel(){
+      const removeText = this.labelList[this.labelList.length-1];
       this.labelList.pop();
+      this.$emit('close-label',removeText);
     }
   }
 }
