@@ -1,8 +1,9 @@
 <template>
   <div class="mainVisual">
     <CardFlameL
-      :cardText = title
-      :cardImage = image
+      :cardTitle="title"
+      :cardImage="image"
+      :cardText="text"
     ></CardFlameL>
   </div>
 </template>
@@ -11,12 +12,7 @@
 import CardFlameL from '../Molecules/card/card_L.vue';
 export default {
   components: { CardFlameL },
-  props:['image'],
-  data(){
-    return{
-      title: 'ポートフォリオ',
-    }
-  }
+  props:['image','title','text'],
 }
 </script>
 

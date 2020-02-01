@@ -44,7 +44,6 @@ export default {
 .listLink__top{
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
 }
 .listLink__bottom{
   display: flex;
@@ -56,15 +55,18 @@ export default {
 }
 .listLink__list{
   display: flex;
+  flex-wrap: wrap;
 }
 .listLink__date{
   flex-basis: 88px;
+  min-width: 88px;
   margin-left: auto;
   font-size: 10px;
   color: #9c9c9c;
   line-height: 36px;
 }
 .listLink__item{
+  margin-top: 8px;
   margin-right: 4px;
 }
 </style>

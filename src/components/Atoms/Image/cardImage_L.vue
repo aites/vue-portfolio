@@ -1,7 +1,7 @@
 <template>
-  <div class="large">
+  <div class="cardLarge">
     <img
-      class="large-image"
+      class="cardLarge__image"
       alt="メインビジュアル"
       :src = "require('../../../assets/' + imageName)"
       slot="cover"
@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.large{
+.cardLarge{
   width: 100%;
 }
-.large-image{
+.cardLarge__image{
   width: 100%;
 }
 </style>

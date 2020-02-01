@@ -3,9 +3,9 @@
     <CardImage 
       :imageName="cardImage">
     </CardImage>
-    <div class="cardContents">
+    <div class="cardS__contents">
       <HeadText
-        class="titleText"
+        class="cardS__titleText"
         :titleText="cardTitle"
       ></HeadText>
       <DetailText :detailText="cardText"></DetailText>
@@ -26,16 +26,16 @@ export default {
 
 <style lang="scss" scoped>
 .cardS{
-  width: 42%;
+  min-width: 42%;
+  flex-basis: 42%;
   border-radius: 4px;
   border: 1px solid #ECECEC;
-  flex: 1 0 auto;
   margin: 8px;
 }
-.cardContents{
+.cardS__contents{
   padding: 8px;
 }
-.titleText{
+.cardS__titleText{
   margin-bottom: 8px;
 }
 </style>

@@ -19,6 +19,6 @@
   font-size: 12px;
   height: 16px;
   line-height: 16px;
-  text-align: start;
+  text-align: right;
 }
 </style>

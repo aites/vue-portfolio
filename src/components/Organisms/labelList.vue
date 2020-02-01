@@ -1,6 +1,6 @@
 <template>
-  <ul class="labelList" v-show="isLabelList()">
-    <li class="labelItem" v-for="(label,index) of labelList" :key="index">
+  <ul class="labelData" v-show="islabelData()">
+    <li class="labelItem" v-for="(label,index) of this.labelData" :key="index">
       <Label
         :labelText = label
         :class="lastLabel(index)"
@@ -22,33 +22,31 @@ export default {
   props: ['labelList','closeIcon'],
   data(){
     return{
-      // labelData: this.labelList,
+      labelData: this.labelList,
     }
   },
   methods:{
-    isLabelList(){
-      if(!this.labelList[0]) return false;
+    islabelData(){
+      if(this.labelData.length === 0) return false;
       return true;
     },
     showClsoeIcon(index){
       if(!this.closeIcon) return false;
-      if(index === this.labelList.length-1)  return true;
+      if(index === this.labelData.length-1)  return true;
     },
     lastLabel(index){
       if(!this.closeIcon) return false;
-      if(index === this.labelList.length-1)  return 'labelLast';
+      if(index === this.labelData.length-1)  return 'labelLast';
     },
     removeLabel(){
-      const removeText = this.labelList[this.labelList.length-1];
-      this.labelList.pop();
-      this.$emit('close-label',removeText);
+      this.$emit('close-label',this.labelData);
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.labelList{
+.labelData{
   display: flex;
   flex-wrap: wrap;
 }

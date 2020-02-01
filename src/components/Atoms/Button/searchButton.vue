@@ -8,7 +8,7 @@
 export default {
   methods:{
     clickButton(){
-      this.$emit('click-button');
+      this.$emit('click-searchButton');
     }
   }
 }
