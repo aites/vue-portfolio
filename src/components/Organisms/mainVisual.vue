@@ -1,18 +1,16 @@
 <template>
   <div class="mainVisual">
-    <CardFlameL
-      :cardTitle="title"
-      :cardImage="image"
-      :cardText="text"
-    ></CardFlameL>
+    <CardImageL
+      :imageName="image"
+    ></CardImageL>
   </div>
 </template>
 
 <script>
-import CardFlameL from '../Molecules/card/card_L.vue';
+import CardImageL from '../Atoms/Image/cardImage_L.vue';
 export default {
-  components: { CardFlameL },
-  props:['image','title','text'],
+  components: { CardImageL },
+  props:['image','text'],
 }
 </script>
 

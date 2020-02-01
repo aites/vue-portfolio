@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <img
-      class="detail-image"
+      class="detail__image"
       alt=""
       :src = "require('../../../assets/' + imageName)"
       slot="cover"
@@ -19,7 +19,7 @@ export default {
 .detail{
   width: 100%;
 }
-.detail-image{
+.detail__image{
   width: 100%;
 }
 </style>

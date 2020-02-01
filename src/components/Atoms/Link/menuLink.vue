@@ -1,5 +1,5 @@
 <template>
-  <div class="label">
+  <div class="menuLink">
     {{text}}
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.label{
+.menuLink{
   font-size: 20px;
   height: 28px;
   line-height: 28px;

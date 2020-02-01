@@ -4,6 +4,8 @@ import Top from '@/components/Templates/top'
 import Project from '@/components/Templates/project'
 import Profile from '@/components/Templates/profile'
 import ProjectDetail from '@/components/Templates/projectDetail'
+import Contact from '@/components/Templates/contact'
+
 
 
 Vue.use(Router)
@@ -12,23 +14,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'top',
       component: Top
     },
     {
       path: '/project',
-      name: '',
+      name: 'project',
       component: Project
     },
     {
       path: '/profile',
-      name: '',
+      name: 'profile',
       component: Profile
     },
     {
       path: '/projectDetail',
       name: 'project-detail',
       component: ProjectDetail
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
     },
   ]
 })

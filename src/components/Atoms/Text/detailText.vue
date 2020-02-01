@@ -2,23 +2,21 @@
   <p class="detailText">
     {{detailText}}
   </p>
-  </template>
+</template>
 
-  <script>
-  export default {
+<script>
+export default {
   props:['detailText'],
-  data() {
-    return{
-    }
-  },
-  }
-  </script>
+}
+</script>
 
 <style lang="scss" scoped>
 .detailText{
   font-size: 12px;
-  height: 16px;
   line-height: 16px;
-  text-align: right;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

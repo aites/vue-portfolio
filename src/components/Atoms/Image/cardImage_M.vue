@@ -1,7 +1,7 @@
 <template>
-  <div class="middle">
+  <div class="cardImageMiddle">
     <img
-      class="middle-image"
+      class="cardImageMiddle__image"
       alt="画像"
       :src = "require('../../../assets/' + imageName)"
       slot="cover"
@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.middle{
+.cardImageMiddle{
   width: 100%;
 }
-.middle-image{
+.cardImageMiddle__image{
   width: 100%;
 }
 </style>

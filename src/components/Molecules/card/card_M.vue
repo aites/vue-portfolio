@@ -1,11 +1,11 @@
 <template>
-  <div class="cardM">
+  <div class="cardMiddle">
     <CardImage 
       :imageName="cardImage">
     </CardImage>
-    <div class="cardContents">
+    <div class="cardMiddle__contents">
       <TitleText
-        class="titleText"
+        class="cardMiddle__titleText"
         :titleText="cardTitle"
       ></TitleText>
       <DetailText :detailText="cardText"></DetailText>
@@ -24,15 +24,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardM{
+.cardMiddle{
   width: 74%;
   border-radius: 4px;
   border: 1px solid #ECECEC;
 }
-.cardContents{
+.cardMiddle__contents{
   padding: 8px;
 }
-.titleText{
+.cardMiddle__titleText{
   margin-bottom: 8px;
 }
 </style>

@@ -1,16 +1,15 @@
 <template>
   <div class="icon">
-    <a-icon type="home" />
+    <a-icon type="close" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-  }
+  width: 24px;
+  height: 24px;
+}
 .anticon {
-  font-size: 20px;
+  font-size: 24px;
 }
 </style>

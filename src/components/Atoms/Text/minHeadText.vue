@@ -15,7 +15,7 @@ export default {
   font-size: 16px;
   height: 16px;
   line-height: 16px;
-  text-align: right;
+  text-align: left;
   font-weight: 500;
 }
 </style>

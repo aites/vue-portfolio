@@ -1,7 +1,7 @@
 <template>
   <div class="mainVisual">
     <img
-      class="mainVisual-image"
+      class="mainVisual__image"
       alt=""
       :src = "require('../../../assets/' + imageName)"
       slot="cover"
@@ -19,7 +19,7 @@ export default {
 .mainVisual{
   width: 100%;
 }
-.mainVisual-image{
+.mainVisual__image{
   width: 100%;
 }
 </style>

@@ -5,24 +5,25 @@
     ></Header>
     <Modal
       ref="modalEvent"
-      :cardTitle = this.title
-      :cardText = this.text
-      :cardImage = this.imageData
+      :cardTitle="modalTitle"
+      :cardText="modalText"
+      :cardImage="modalImageData"
     ></Modal>
     <Card
-      :cardTitle = this.title
-      :cardText = this.text
-      :cardImage = this.imageData
+      :cardTitle="title"
+      :cardText="text"
+      :cardImage="imageData"
     ></Card>
-    <div class="slider">
-      <CardS v-for="(card,index) of this.cardData" :key="index"
-        :cardTitle="card.title"
-        :cardText="card.text"
-        :cardImage="card.imageData"
-        @open="openModal"
-      ></CardS>
-    </div>
-    <div class="magin"></div>
+    <ul class="profile__slider">
+      <li class="profile__sliderItem" v-for="(card,index) of this.cardData" :key="index">
+        <CardS 
+          :cardTitle="card.title"
+          :cardText="card.text"
+          :cardImage="card.imageData"
+          @open="openModal(card.title,card.text,card.imageData)"
+        ></CardS>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -42,25 +43,31 @@ export default {
       imageData: 'project_1_pc.png',
       cardData: [
         {
-          title: 'プロフィール1',
-          text: 'プロフィールのテキスト',
-          imageData: 'project_1_pc.png',
+          title: 'ボルダリング',
+          text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
+          imageData: 'hobby/hobby_1.png',
         },
         {
-          title: 'プロフィール2',
-          text: 'プロフィールのテキスト',
-          imageData: 'project_1_pc.png',
+          title: 'ポイント',
+          text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
+          imageData: 'hobby/hobby_2.png',
         },
         {
-          title: 'プロフィール3',
-          text: 'プロフィールのテキスト',
-          imageData: 'project_1_pc.png',
+          title: 'ゲーム',
+          text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
+          imageData: 'hobby/hobby_3.png',
         },
       ],
+      modalTitle: '',
+      modalText: '',
+      modalImageData: '',
     }
   },
   methods: {
-    openModal() {
+    openModal(title,text,image) {
+      this.modalTitle=title;
+      this.modalText=text;
+      this.modalImageData=image;
       this.$refs.modalEvent.openModal();
     },
   }
@@ -68,14 +75,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider{
+.profile__slider{
   display: flex;
   margin-top: 20px;
   overflow: scroll;
+  position: relative;
+  left: -8px;
+  width: 100vw;
 }
-
-.magin{
-  padding-bottom: 1000px;
+.profile__sliderItem{
+  min-width: 42%;
+  flex-basis: 42%;
 }
 </style>
 

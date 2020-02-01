@@ -1,9 +1,14 @@
 <template>
-  <div class="modal-overlay" v-on:click.self="closeModal" v-if="modal">
+  <div class="modalOverlay" @click.self="closeModal" v-if="modal">
+    <div class="modalClose" @click="closeModal">
+      <CloseIcon></CloseIcon>
+    </div>
     <div class="modal">
       <CardImage :imageName="cardImage"></CardImage>
-      <div class="modalContents">
-        <HeadText :titleText="cardTitle"></HeadText>
+      <div class="modal__contents">
+        <div class="modal__contentsTitle">
+          <HeadText :titleText="cardTitle"></HeadText>
+        </div>
         <DetailText :detailText="cardText"></DetailText>
       </div>
     </div>
@@ -14,9 +19,10 @@
 import HeadText from '../Atoms/Text/minHeadText.vue';
 import CardImage from '../Atoms/Image/cardImage_M';
 import DetailText from '../Atoms/Text/detailText.vue';
+import CloseIcon from '../Atoms/Icon/closeIcon.vue';
 
 export default {
-  components: { HeadText,CardImage,DetailText },
+  components: { HeadText,CardImage,DetailText,CloseIcon },
   props:['cardTitle','cardText','cardImage'],
   data(){
     return{
@@ -44,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.modal-overlay {
+.modalOverlay {
   position: fixed;
   z-index: 30;
   top: 0;
@@ -52,6 +58,13 @@ export default {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+}
+.modalClose{
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  color: #FFFFFF;
+  font-size: 32px;
 }
 .modal{
   width: 74vw;
@@ -62,8 +75,10 @@ export default {
   background-color: #FFF;
   overflow: scroll;
 }
-
-.modalContents{
+.modal__contents{
   padding: 12px;
+}
+.modal__contentsTitle{
+  margin-bottom: 8px;
 }
 </style>

@@ -1,14 +1,16 @@
 <template>
-  <div class="cardS" @click="$emit('open')">
+  <div class="cardSmall" @click="$emit('open')">
     <CardImage 
       :imageName="cardImage">
     </CardImage>
-    <div class="cardS__contents">
+    <div class="cardSmall__contents">
       <HeadText
-        class="cardS__titleText"
+        class="cardSmall__titleText"
         :titleText="cardTitle"
       ></HeadText>
-      <DetailText :detailText="cardText"></DetailText>
+      <div class="cardSmall__detail">
+        <DetailText :detailText="cardText"></DetailText>
+      </div>
     </div>
   </div>
 </template>
@@ -25,17 +27,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardS{
+.cardSmall{
   min-width: 42%;
   flex-basis: 42%;
   border-radius: 4px;
   border: 1px solid #ECECEC;
   margin: 8px;
 }
-.cardS__contents{
+.cardSmall__contents{
   padding: 8px;
 }
-.cardS__titleText{
+.cardSmall__titleText{
   margin-bottom: 8px;
+}
+.cardSmall__detail{
+  overflow: hidden;
+  width: 100%;
 }
 </style>

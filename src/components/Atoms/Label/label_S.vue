@@ -1,5 +1,5 @@
 <template>
-  <div class="label">
+  <div class="labelSmall">
     {{text}}
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.label{
+.labelSmall{
   font-size: 12px;
   font-weight: bold;
   height: 24px;

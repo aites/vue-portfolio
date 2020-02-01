@@ -1,9 +1,9 @@
 <template>
-  <div class="cardL">
+  <div class="cardLarge">
     <CardImageL
-      :imageName = cardImage
+      :imageName="cardImage"
     ></CardImageL>
-    <div class="cardContents">
+    <div class="cardLarge__contents">
       <TitleText 
         :titleText="cardText">
       </TitleText>
@@ -26,12 +26,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardL{
+.cardLarge{
   width: 100%;
   border-radius: 4px;
   border: 1px solid #ECECEC;
 }
-.cardContents{
+.cardLarge__contents{
   padding: 8px;
 }
 

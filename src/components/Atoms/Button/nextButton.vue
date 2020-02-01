@@ -5,8 +5,8 @@
 </template>
 
 <style scoped lang="scss">
-  .icon {
-    width: 32px;
-    height: 32px;
-  }
+.icon {
+  width: 32px;
+  height: 32px;
+}
 </style>

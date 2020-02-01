@@ -1,23 +1,25 @@
 <template>
-  <ul class="headerMenu">
-    <router-link tag="li" v-for="item in menu" class="menuItem" :to="item.pass" :key="item.text">
-      <IconHome v-if="item.text === 'トップ'"></IconHome>
-      <IconProfile v-if="item.text === 'プロフィール'"></IconProfile>
-      <IconProject v-if="item.text === '案件一覧'"></IconProject>
-      <IconMail v-if="item.text === 'お問合わせ'"></IconMail>
-      <MenuLink class="menuText"
-        :linkText = item.text
-      ></MenuLink>
-    </router-link>
-  </ul>
+  <div class="headerMenu">
+    <ul class="headerMenu__list">
+      <router-link tag="li" v-for="item in menu" class="headerMenu__item" :to="item.pass" :key="item.text">
+        <IconHome v-if="item.text === 'トップ'"></IconHome>
+        <IconProfile v-if="item.text === 'プロフィール'"></IconProfile>
+        <IconProject v-if="item.text === '案件一覧'"></IconProject>
+        <IconMail v-if="item.text === 'お問合わせ'"></IconMail>
+        <MenuLink class="headerMenu__itemText"
+          :linkText = item.text
+        ></MenuLink>
+      </router-link>
+    </ul>
+  </div>
 </template>
 
 <script>
 import MenuLink from '../Atoms/Link/menuLink.vue';
-import IconHome from '../Atoms/Icon/home.vue';
-import IconProfile from '../Atoms/Icon/profile.vue';
-import IconProject from '../Atoms/Icon/project.vue';
-import IconMail from '../Atoms/Icon/mail.vue';
+import IconHome from '../Atoms/Icon/homeIcon.vue';
+import IconProfile from '../Atoms/Icon/profileIcon.vue';
+import IconProject from '../Atoms/Icon/projectIcon.vue';
+import IconMail from '../Atoms/Icon/mailIcon.vue';
 
 
 export default {
@@ -49,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.headerMenu{
+.headerMenu__list{
   border: 1px solid #9c9c9c;
   padding: 12px;
   position: absolute;
@@ -58,12 +60,7 @@ export default {
   z-index: 100;
   background-color: #FFF;
 }
-.menuText{
-  font-size: 12px;
-  line-height: 20px;
-  height: 20px;
-}
-.menuItem{
+.headerMenu__item{
   display: flex;
   height: 20px;
   margin-bottom: 8px;
@@ -72,5 +69,9 @@ export default {
     margin-bottom: 0;
   }
 }
+.headerMenu__itemText{
+  font-size: 12px;
+  line-height: 20px;
+  height: 20px;
+}
 </style>
-

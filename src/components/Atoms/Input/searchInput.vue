@@ -1,5 +1,5 @@
 <template>
-  <input type="text" class="search" placeholder="serach" @change="inputValue($event.target.value)"/>
+  <input type="text" class="searchInput" placeholder="serach.." @change="inputValue($event.target.value)"/>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search{
+.searchInput{
   border: 1px solid #DFDFDF;
   padding-left: 8px;
   border-radius: 4px 0 0 4px;

@@ -1,7 +1,7 @@
 <template>
-  <div class="small">
+  <div class="cardImageSmall">
     <img
-      class="small-image"
+      class="cardImageSmall__image"
       alt="画像"
       :src = "require('../../../assets/' + imageName)"
       slot="cover"
@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.small{
-  width: 100%;
+.cardSmcardImageSmallall{
+  max-height: 42vw;
 }
-.small-image{
+.cardImageSmall__image{
   width: 100%;
 }
 </style>

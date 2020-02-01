@@ -1,24 +1,20 @@
 <template>
-  <p class="detailText">
+  <p class="minDetailText">
     {{detailText}}
   </p>
-  </template>
+</template>
 
-  <script>
-  export default {
+<script>
+export default {
   props:['detailText'],
-  data() {
-    return{
-    }
-  },
-  }
-  </script>
+}
+</script>
 
 <style lang="scss" scoped>
-.detailText{
+.minDetailText{
   font-size: 10px;
   height: 16px;
   line-height: 16px;
-  text-align: right;
+  text-align: left;
 }
 </style>

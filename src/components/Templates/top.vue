@@ -4,8 +4,9 @@
       :headTitle = title
     ></Header>
     <MainVisual
-      :image = this.imageData
+      :image="imageData"
     ></MainVisual>
+    <p class="top__text">{{text}}</p>
   </div>
 </template>
 
@@ -18,8 +19,9 @@ export default {
   components: { Header,MainVisual },
   data(){
     return{
-      title: 'ポートフォリオ',
-      imageData: 'project_1_pc.png'
+      title: 'ポートフォリオサイト',
+      imageData: 'project_1_pc.png',
+      text: '左上のメニューをクリックしてください。'
     }
   }
 }
@@ -29,5 +31,8 @@ export default {
 .header{
   display: flex;
 }
+.top__text{
+  text-align: left;
+  margin-top: 8px;
+}
 </style>
-

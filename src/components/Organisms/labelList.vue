@@ -1,21 +1,23 @@
 <template>
-  <ul class="labelData" v-show="islabelData()">
-    <li class="labelItem" v-for="(label,index) of this.labelData" :key="index">
-      <Label
-        :labelText = label
-        :class="lastLabel(index)"
-      >
-      </Label>
-      <div class="closeIcon" @click.stop="removeLabel()" v-if="showClsoeIcon(index)">
-        <Close></Close>
-      </div>
-    </li>
-  </ul>
+  <div class="labelList">
+    <ul class="labelList__list" v-show="islabelData()">
+      <li class="labelList__item" v-for="(label,index) of this.labelData" :key="index">
+        <Label
+          :labelText = label
+          :class="lastLabel(index)"
+        >
+        </Label>
+        <div class="labelList__closeIcon" @click.stop="removeLabel()" v-if="showClsoeIcon(index)">
+          <Close></Close>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 import Label from '../Atoms/Label/label_M.vue';
-import Close from '../Atoms/Icon/close.vue';
+import Close from '../Atoms/Icon/LabelCloseIcon.vue';
 
 export default {
   components: { Label,Close },
@@ -36,7 +38,7 @@ export default {
     },
     lastLabel(index){
       if(!this.closeIcon) return false;
-      if(index === this.labelData.length-1)  return 'labelLast';
+      if(index === this.labelData.length-1)  return 'labelList__labelLast';
     },
     removeLabel(){
       this.$emit('close-label',this.labelData);
@@ -46,19 +48,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.labelData{
+.labelList__list{
   display: flex;
   flex-wrap: wrap;
 }
-.labelItem{
+.labelList__item{
   margin-right: 4px;
   position: relative;
   margin-bottom: 4px;
 }
-.labelLast{
+.labelList__labelLast{
   padding-right: 20px;
 }
-.closeIcon{
+.labelList__closeIcon{
   position: absolute;
   padding: 8px;
   top: -10px;
