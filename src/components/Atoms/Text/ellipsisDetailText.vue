@@ -1,5 +1,5 @@
 <template>
-  <p class="detailText">
+  <p class="ellipsisDetailText">
     {{detailText}}
   </p>
 </template>
@@ -11,9 +11,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.detailText{
+.ellipsisDetailText{
   font-size: 12px;
   line-height: 16px;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

@@ -20,7 +20,7 @@
   </div>
   <p v-show="showProjectList" class="project__searchWord">検索ワード：{{searchWordList}}</p>
   <ProjectList
-    v-show="showfirstProjectList"
+    v-show="showFirstProjectList"
     :projectList="project"
   ></ProjectList>
   <ProjectList
@@ -46,7 +46,7 @@ export default {
       title: '案件一覧',
       searchTitle: '絞り込み',
       searchWordList: '',
-      showfirstProjectList :true,
+      showFirstProjectList :true,
       showProjectList: false,
       showNoSearch: false,
       project: [
@@ -122,22 +122,16 @@ export default {
       this.searchWordList = word;
     },
     searchedProject(results){
-      if(results.length === 0){
-        this.showfirstProjectList = false;
-        this.showProjectList = false;
-        this.showNoSearch = true;
-        return false;
-      }else{
-        this.showfirstProjectList = false;
-        this.showProjectList = true;
-        this.showNoSearch = false;
-      }
+      const isNoResults = results.length === 0;
+      this.showFirstProjectList = false;
+      this.showProjectList = !isNoResults;
+      this.showNoSearch = isNoResults;  
       this.$set(this.searchResult, 'project', results);
     },
     resetSearch(){
       this.searchWordList = '';
       this.showProjectList = false;
-      this.showfirstProjectList = true;
+      this.showFirstProjectList = true;
       this.showNoSearch = false;
     }
   },

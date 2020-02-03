@@ -18,7 +18,7 @@
 <script>
 import HeadText from '../../Atoms/Text/minHeadText.vue';
 import CardImage from '../../Atoms/Image/cardImage_S';
-import DetailText from '../../Atoms/Text/detailText.vue';
+import DetailText from '../../Atoms/Text/ellipsisDetailText.vue';
 
 export default {
   components: { HeadText,CardImage,DetailText },
