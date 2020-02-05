@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import Header from '../Organisms/header.vue';
-import Card from '../Molecules/card/card_L.vue';
-import CardS from '../Molecules/card/card_S.vue';
-import Modal from '../Organisms/modal.vue';
+import Header from '../../container/Organisms/header.vue';
+import Card from '../../components/Molecules/card/card_L.vue';
+import CardS from '../../components/Molecules/card/card_S.vue';
+import Modal from '../../container/Organisms/modal.vue';
 
 export default {
   components: { Header,Card,CardS,Modal },

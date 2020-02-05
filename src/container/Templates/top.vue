@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Header from '../Organisms/header.vue';
-import MainVisual from '../Organisms/mainVisual.vue';
+import Header from '../../container/Organisms/header.vue';
+import MainVisual from '../../container/Organisms/mainVisual.vue';
 
 export default {
   

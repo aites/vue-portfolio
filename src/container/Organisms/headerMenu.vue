@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import MenuLink from '../Atoms/Link/menuLink.vue';
-import IconHome from '../Atoms/Icon/homeIcon.vue';
-import IconProfile from '../Atoms/Icon/profileIcon.vue';
-import IconProject from '../Atoms/Icon/projectIcon.vue';
-import IconMail from '../Atoms/Icon/mailIcon.vue';
+import MenuLink from '../../components/Atoms/Link/menuLink.vue';
+import IconHome from '../../components/Atoms/Icon/homeIcon.vue';
+import IconProfile from '../../components/Atoms/Icon/profileIcon.vue';
+import IconProject from '../../components/Atoms/Icon/projectIcon.vue';
+import IconMail from '../../components/Atoms/Icon/mailIcon.vue';
 
 
 export default {

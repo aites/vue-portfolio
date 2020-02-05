@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import SearchInput from '../../Atoms/Input/searchInput.vue';
-import SearchButton from '../../Atoms/Button/searchButton.vue';
+import SearchInput from '../../../components/Atoms/Input/searchInput.vue';
+import SearchButton from '../../../components/Atoms/Button/searchButton.vue';
 
 export default {
   props:['searchData','searchWord'],

@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import MenuButton from '../Atoms/Button/menuButton.vue';
-import HeadText from '../Atoms/Text/headText.vue';
-import HeadMenu from '../Organisms/headerMenu.vue';
+import MenuButton from '../../components/Atoms/Button/menuButton.vue';
+import HeadText from '../../components/Atoms/Text/headText.vue';
+import HeadMenu from '../../container/Organisms/headerMenu.vue';
 
 export default {
   components: { MenuButton,HeadText,HeadMenu },

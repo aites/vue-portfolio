@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ListLink from '../Molecules/Link/listLink.vue';
+import ListLink from '../../components/Molecules/Link/listLink.vue';
 
 export default {
   components: { ListLink },

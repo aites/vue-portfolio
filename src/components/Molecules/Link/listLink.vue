@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import LabelS from '../../Atoms/Label/label_S.vue';
+import LabelS from '../../../components/Atoms/Label/label_S.vue';
 
 export default {
   components: { LabelS },

@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import HeadText from '../Atoms/Text/minHeadText.vue';
-import CardImage from '../Atoms/Image/cardImage_M';
-import DetailText from '../Atoms/Text/detailText.vue';
-import CloseIcon from '../Atoms/Icon/closeIcon.vue';
+import HeadText from '../../components/Atoms/Text/minHeadText.vue';
+import CardImage from '../../components/Atoms/Image/cardImage_M';
+import DetailText from '../../components/Atoms/Text/detailText.vue';
+import CloseIcon from '../../components/Atoms/Icon/closeIcon.vue';
 
 export default {
   components: { HeadText,CardImage,DetailText,CloseIcon },

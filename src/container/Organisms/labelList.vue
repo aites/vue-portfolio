@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import Label from '../Atoms/Label/label_M.vue';
-import Close from '../Atoms/Icon/LabelCloseIcon.vue';
+import Label from '../../components/Atoms/Label/label_M.vue';
+import Close from '../../components/Atoms/Icon/LabelCloseIcon.vue';
 
 export default {
   components: { Label,Close },
@@ -28,10 +28,6 @@ export default {
     }
   },
   methods:{
-    islabelData(){
-      if(this.labelData.length === 0) return false;
-      return true;
-    },
     showClsoeIcon(index){
       if(!this.closeIcon) return false;
       if(index === this.labelData.length-1)  return true;
@@ -43,6 +39,12 @@ export default {
     removeLabel(){
       this.$emit('close-label',this.labelData);
     }
+  },
+  computed:{
+    islabelData(){
+      if(this.labelData.length === 0) return false;
+      return true;
+    },
   }
 }
 </script>

@@ -13,9 +13,9 @@
   </div>
 </template>
 <script>
-import TitleText from '../../Atoms/Text/minHeadText.vue';
-import CardImage from '../../Atoms/Image/cardImage_M';
-import DetailText from '../../Atoms/Text/detailText.vue';
+import TitleText from '../../../components/Atoms/Text/minHeadText.vue';
+import CardImage from '../../../components/Atoms/Image/cardImage_M';
+import DetailText from '../../../components/Atoms/Text/detailText.vue';
 
 export default {
   components: { TitleText,CardImage,DetailText },

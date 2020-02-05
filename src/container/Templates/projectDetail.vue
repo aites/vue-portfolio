@@ -47,10 +47,10 @@
 </template>
 
 <script>
-import Header from '../Organisms/header.vue';
-import TaskTitle from '../Atoms/Text/titleText.vue';
-import LabelList from '../Organisms/labelList.vue';
-import DetailImage from '../Atoms/Image/detailImage.vue';
+import Header from '../../container/Organisms/header.vue';
+import TaskTitle from '../../components/Atoms/Text/titleText.vue';
+import LabelList from '../../container/Organisms/labelList.vue';
+import DetailImage from '../../components/Atoms/Image/detailImage.vue';
 
 export default {
   components: { Header,TaskTitle,LabelList,DetailImage },
@@ -67,6 +67,9 @@ export default {
     }
   },
   created(){
+    
+  },
+  computed: {
     
   },
 }

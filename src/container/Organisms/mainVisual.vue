@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CardImageL from '../Atoms/Image/cardImage_L.vue';
+import CardImageL from '../../components/Atoms/Image/cardImage_L.vue';
 export default {
   components: { CardImageL },
   props:['image','text'],

@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Top from '@/components/Templates/top'
-import Project from '@/components/Templates/project'
-import Profile from '@/components/Templates/profile'
-import ProjectDetail from '@/components/Templates/projectDetail'
-import Contact from '@/components/Templates/contact'
-
-
+import Top from '@/container/Templates/top'
+import Project from '@/container/Templates/project'
+import Profile from '@/container/Templates/profile'
+import ProjectDetail from '@/container/Templates/projectDetail'
+import Contact from '@/container/Templates/contact'
 
 Vue.use(Router)
 

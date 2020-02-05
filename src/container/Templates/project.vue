@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import Header from '../Organisms/header.vue';
-import Title from '../Atoms/Text/titleText.vue';
-import Search from "../Molecules/Input/search.vue";
-import ProjectList from '../Organisms/linkList.vue';
-import ResetButton from '../Atoms/Button/resetButton.vue';
+import Header from '../../container/Organisms/header.vue';
+import Title from '../../components/Atoms/Text/titleText.vue';
+import Search from "../../components/Molecules/Input/search.vue";
+import ProjectList from '../../container/Organisms/linkList.vue';
+import ResetButton from '../../components/Atoms/Button/resetButton.vue';
 
 
 export default {
