@@ -1,6 +1,6 @@
 <template>
   <div class="labelList">
-    <ul class="labelList__list" v-show="islabelData()">
+    <ul class="labelList__list" v-show="islabelData">
       <li class="labelList__item" v-for="(label,index) of this.labelData" :key="index">
         <Label
           :labelText = label

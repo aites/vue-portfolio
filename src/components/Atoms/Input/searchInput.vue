@@ -1,5 +1,5 @@
 <template>
-  <input type="text" class="searchInput" placeholder="serach.." @change="inputValue($event.target.value)"/>
+  <input type="text" class="searchInput" placeholder="search" @change="inputValue($event.target.value)"/>
 </template>
 
 <script>

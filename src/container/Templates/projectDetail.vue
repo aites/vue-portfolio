@@ -3,9 +3,9 @@
     <Header
       :headTitle = this.title
     ></Header>
-    <TaskTitle
+    <TitleText
       :titleText="taskData.title"
-    ></TaskTitle>
+    ></TitleText>
     <div class="projectDetail__labelList">
       <LabelList
         :labelList="taskData.label"
@@ -17,29 +17,29 @@
     ></DetailImage>
     <div class="projectDetail__contents">
       <p class="projectDetail__contentsTitle">サイトの説明</p>
-      {{this.taskData.info}}
+      {{info}}
     </div>
     <div class="projectDetail__contents">
       <ul class="detailList">
         <li class="projectDetail__detailItem">
           <p class="projectDetail__contentsTitle">使用言語</p>
-          {{this.taskData.detail.language}}
+          {{language}}
         </li>
         <li class="projectDetail__detailItem">
           <p class="projectDetail__contentsTitle">規模感</p>
-          {{this.taskData.detail.scale}}
+          {{scale}}
         </li>
         <li class="projectDetail__detailItem">
           <p class="projectDetail__contentsTitle">案件対応期間</p>
-          {{this.taskData.detail.term}}
+          {{term}}
         </li>
         <li class="projectDetail__detailItem">
           <p class="projectDetail__contentsTitle">サイトURL</p>
-          <a :href="taskData.detail.url">{{this.taskData.detail.url}}</a>
+          <a :href="taskData.detail.url">{{url}}</a>
         </li>
         <li class="projectDetail__detailItem">
           <p class="projectDetail__contentsTitle">開発環境</p>
-          {{this.taskData.detail.development}}
+          {{development}}
         </li>
       </ul>
     </div>
@@ -48,12 +48,12 @@
 
 <script>
 import Header from '../../container/Organisms/header.vue';
-import TaskTitle from '../../components/Atoms/Text/titleText.vue';
+import TitleText from '../../components/Atoms/Text/titleText.vue';
 import LabelList from '../../container/Organisms/labelList.vue';
 import DetailImage from '../../components/Atoms/Image/detailImage.vue';
 
 export default {
-  components: { Header,TaskTitle,LabelList,DetailImage },
+  components: { Header,TitleText,LabelList,DetailImage },
   data(){
     return{
       title: '案件詳細',
@@ -70,7 +70,24 @@ export default {
     
   },
   computed: {
-    
+    info() {
+      return this.taskData.info;
+    },
+    language() {
+      return this.taskData.detail.language;
+    },
+    scale() {
+      return this.taskData.detail.scale;
+    },
+    term() {
+      return this.taskData.detail.term;
+    },
+    url() {
+      return this.taskData.detail.url;
+    },
+    development() {
+      return this.taskData.detail.development;
+    },
   },
 }
 </script>

@@ -3,13 +3,13 @@
   <Header
       :headTitle="title"
   ></Header>
-  <Title
-    :titleText="searchTitle"></Title>
+  <TitleText
+    :titleText="searchTitle"></TitleText>
   <div class="project__searchBox">
     <Search
       :searchData="updateSearchData()"
       :searchWord="searchWordList"
-      @search-result="search"
+      :searchFanction="search"
       ref="searchRef"
     ></Search>
     <div class="project__reset">
@@ -18,37 +18,37 @@
       ></ResetButton>
     </div>
   </div>
-  <p v-show="showProjectList" class="project__searchWord">検索ワード：{{searchWordList}}</p>
-  <ProjectList
+  <p v-show="isShowProjectList" class="project__searchWord">検索ワード：{{searchWordList}}</p>
+  <LinkList
     v-show="showFirstProjectList"
     :projectList="project"
-  ></ProjectList>
-  <ProjectList
-    v-show="showProjectList"
+  ></LinkList>
+  <LinkList
+    v-show="isShowProjectList"
     :projectList="searchResult.project"
-  ></ProjectList>
-  <p class="project__noText" v-show="showNoSearch">検索条件がありませんでした</p>
+  ></LinkList>
+  <p class="project__noText" v-show="isShowNoSearch">検索条件がありませんでした</p>
   </div>
 </template>
 
 <script>
 import Header from '../../container/Organisms/header.vue';
-import Title from '../../components/Atoms/Text/titleText.vue';
-import Search from "../../components/Molecules/Input/search.vue";
-import ProjectList from '../../container/Organisms/linkList.vue';
+import TitleText from '../../components/Atoms/Text/titleText.vue';
+import Search from '../../components/Molecules/Input/search.vue';
+import LinkList from '../../container/Organisms/linkList.vue';
 import ResetButton from '../../components/Atoms/Button/resetButton.vue';
 
 
 export default {
-  components: { Header,ProjectList,Title,Search,ResetButton},
+  components: { Header,LinkList,TitleText,Search,ResetButton},
   data(){
     return{
       title: '案件一覧',
       searchTitle: '絞り込み',
       searchWordList: '',
       showFirstProjectList :true,
-      showProjectList: false,
-      showNoSearch: false,
+      isShowProjectList: false,
+      isShowNoSearch: false,
       project: [
         {
           title: 'スタディサプリ',
@@ -124,15 +124,15 @@ export default {
     searchedProject(results){
       const isNoResults = results.length === 0;
       this.showFirstProjectList = false;
-      this.showProjectList = !isNoResults;
-      this.showNoSearch = isNoResults;  
+      this.isShowProjectList = !isNoResults;
+      this.isShowNoSearch = isNoResults;  
       this.$set(this.searchResult, 'project', results);
     },
     resetSearch(){
       this.searchWordList = '';
-      this.showProjectList = false;
+      this.isShowProjectList = false;
       this.showFirstProjectList = true;
-      this.showNoSearch = false;
+      this.isShowNoSearch = false;
     }
   },
 }

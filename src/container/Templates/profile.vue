@@ -9,11 +9,11 @@
       :cardText="modalText"
       :cardImage="modalImageData"
     ></Modal>
-    <Card
+    <CardL
       :cardTitle="title"
       :cardText="text"
       :cardImage="imageData"
-    ></Card>
+    ></CardL>
     <ul class="profile__slider">
       <li class="profile__sliderItem" v-for="(card,index) of this.cardData" :key="index">
         <CardS 
@@ -29,35 +29,38 @@
 
 <script>
 import Header from '../../container/Organisms/header.vue';
-import Card from '../../components/Molecules/card/card_L.vue';
+import CardL from '../../components/Molecules/card/card_L.vue';
 import CardS from '../../components/Molecules/card/card_S.vue';
 import Modal from '../../container/Organisms/modal.vue';
+import profileData from '../../firebase_data';
+const data = new profileData();
 
 export default {
-  components: { Header,Card,CardS,Modal },
+  components: { Header,CardL,CardS,Modal },
   props:['headTitle'],
   data(){
     return{
       title: 'プロフィール',
       text: 'プロフィールのテキスト',
       imageData: 'project_1_pc.png',
-      cardData: [
-        {
-          title: 'ボルダリング',
-          text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
-          imageData: 'hobby/hobby_1.png',
-        },
-        {
-          title: 'ポイント',
-          text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
-          imageData: 'hobby/hobby_2.png',
-        },
-        {
-          title: 'ゲーム',
-          text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
-          imageData: 'hobby/hobby_3.png',
-        },
-      ],
+      cardData: data.getData(),
+      // cardData: [
+      //   {
+      //     title: 'ボルダリング',
+      //     text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
+      //     imageData: 'hobby/hobby_1.png',
+      //   },
+      //   {
+      //     title: 'ポイント',
+      //     text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
+      //     imageData: 'hobby/hobby_2.png',
+      //   },
+      //   {
+      //     title: 'ゲーム',
+      //     text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
+      //     imageData: 'hobby/hobby_3.png',
+      //   },
+      // ],
       modalTitle: '',
       modalText: '',
       modalImageData: '',

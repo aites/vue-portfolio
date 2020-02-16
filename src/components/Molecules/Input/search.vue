@@ -10,7 +10,7 @@ import SearchInput from '../../../components/Atoms/Input/searchInput.vue';
 import SearchButton from '../../../components/Atoms/Button/searchButton.vue';
 
 export default {
-  props:['searchData','searchWord'],
+  props:['searchData','searchWord','searchFanction'],
   components: { SearchInput,SearchButton },
   data(){
     return {
@@ -23,14 +23,13 @@ export default {
       this.inputText = text;
     },
     clickSearch(){
-      if(this.inputText != '')  this.search();
+      if(this.inputText !== ''){
+        const results = this.searchData.filter(item => {
+          return (item.title.indexOf(this.inputText) !== -1 || item.label.indexOf(this.inputText) !== -1)
+        });
+        this.searchFanction(results, this.inputText);  
+      }
     },
-    search(){
-      const results = this.searchData.filter(item => {
-        return (item.title.indexOf(this.inputText) != -1 || item.label.indexOf(this.inputText) != -1)
-      });
-      this.$emit('search-result', results, this.inputText);
-    }
   }
 }
 </script>
