@@ -1,14 +1,14 @@
 <template>
   <div class="labelList">
     <ul class="labelList__list" v-show="islabelData">
-      <li class="labelList__item" v-for="(label,index) of this.labelData" :key="index">
+      <li class="labelList__item" v-for="(label,index) of this.labelList" :key="index">
         <Label
           :labelText = label
           :class="lastLabel(index)"
         >
         </Label>
-        <div class="labelList__closeIcon" @click.stop="removeLabel()" v-if="showClsoeIcon(index)">
-          <Close></Close>
+        <div class="labelList__closeIcon" @click.stop="removeLabel()" v-if="showCloseIcon(index)">
+          <Close/>
         </div>
       </li>
     </ul>
@@ -22,28 +22,22 @@ import Close from '../../components/Atoms/Icon/LabelCloseIcon.vue';
 export default {
   components: { Label,Close },
   props: ['labelList','closeIcon'],
-  data(){
-    return{
-      labelData: this.labelList,
-    }
-  },
   methods:{
-    showClsoeIcon(index){
+    showCloseIcon(index){
       if(!this.closeIcon) return false;
-      if(index === this.labelData.length-1)  return true;
+      if(index === this.labelList.length-1)  return true;
     },
     lastLabel(index){
       if(!this.closeIcon) return false;
-      if(index === this.labelData.length-1)  return 'labelList__labelLast';
+      if(index === this.labelList.length-1)  return 'labelList__labelLast';
     },
     removeLabel(){
-      this.$emit('close-label',this.labelData);
+      this.$emit('close-label',this.labelList);
     }
   },
   computed:{
     islabelData(){
-      if(this.labelData.length === 0) return false;
-      return true;
+      return this.labelList.length !== 0;
     },
   }
 }

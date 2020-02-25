@@ -19,16 +19,15 @@ export default {
     }
   },
   methods:{
-    getInput(text=''){
+    getInput(text){
       this.inputText = text;
     },
     clickSearch(){
-      if(this.inputText !== ''){
-        const results = this.searchData.filter(item => {
-          return (item.title.indexOf(this.inputText) !== -1 || item.label.indexOf(this.inputText) !== -1)
-        });
-        this.searchFanction(results, this.inputText);  
-      }
+      if(this.inputText === '') return;
+      const results = this.searchData.filter(item => {
+        return (item.title.indexOf(this.inputText) !== -1 || item.label.indexOf(this.inputText) !== -1)
+      });
+      this.searchFanction(results, this.inputText);  
     },
   }
 }
