@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	props: ['titleText'],
+	props: { titleText: String },
 };
 </script>
 

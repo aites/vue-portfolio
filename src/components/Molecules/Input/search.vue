@@ -10,7 +10,7 @@ import SearchInput from '../../../components/Atoms/Input/searchInput.vue';
 import SearchButton from '../../../components/Atoms/Button/searchButton.vue';
 
 export default {
-	props: ['searchData', 'searchWord', 'searchFanction'],
+	props: { searchData: String, searchWord: String, searchFanction: Function },
 	components: { SearchInput, SearchButton },
 	data() {
 		return {

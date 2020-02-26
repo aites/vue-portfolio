@@ -11,7 +11,7 @@
 
 <script>
 export default {
-	props: ['imageName'],
+	props: { imageName: String },
 };
 </script>
 

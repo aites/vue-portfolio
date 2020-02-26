@@ -31,7 +31,7 @@ const data = new profileData();
 
 export default {
 	components: { Header, CardL, CardS, Modal },
-	props: ['headTitle'],
+	props: { headTitle: String },
 	data() {
 		return {
 			title: 'プロフィール',

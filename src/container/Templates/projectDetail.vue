@@ -2,7 +2,7 @@
 	<div class="projectDetail">
 		<Header :headTitle="this.title"></Header>
 		<TitleText :titleText="taskData.title"></TitleText>
-		<div class="projectDetail__labelList">
+		<div class="projectDetail__labelList" v-if="showLabel">
 			<LabelList :labelList="taskData.label" :closeIcon="false"></LabelList>
 		</div>
 		<DetailImage :imageName="taskData.image"></DetailImage>
@@ -54,10 +54,11 @@ export default {
 	methods: {
 		reload() {
 			this.$router.go({ path: this.$router.currentRoute.path, force: true });
-			console.log('search'); // eslint-disable-line
+		},
+		showLabel() {
+			return this.taskData.label > 0;
 		},
 	},
-	created() {},
 	computed: {
 		info() {
 			return this.taskData.info;

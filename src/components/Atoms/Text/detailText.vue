@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	props: ['detailText'],
+	props: { detailText: String },
 };
 </script>
 

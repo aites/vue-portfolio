@@ -17,7 +17,7 @@ import Close from '../../components/Atoms/Icon/LabelCloseIcon.vue';
 
 export default {
 	components: { Label, Close },
-	props: ['labelList', 'closeIcon'],
+	props: { labelList: Array, closeIcon: Boolean },
 	methods: {
 		showCloseIcon(index) {
 			if (!this.closeIcon) return false;

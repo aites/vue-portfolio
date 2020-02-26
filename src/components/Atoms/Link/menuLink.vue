@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	props: ['linkText'],
+	props: { linkText: String },
 	data() {
 		return {
 			text: this.linkText,

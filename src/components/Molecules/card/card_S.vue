@@ -17,7 +17,7 @@ import DetailText from '../../../components/Atoms/Text/ellipsisDetailText.vue';
 
 export default {
 	components: { HeadText, CardImage, DetailText },
-	props: ['cardTitle', 'cardText', 'cardImage'],
+	props: { cardTitle: String, cardText: String, cardImage: String },
 };
 </script>
 

@@ -2,16 +2,16 @@
 	<div class="listLink">
 		<div class="listLink__top">
 			<a-icon type="right" />
-			<h3 class="listLink__title">{{ this.title }}</h3>
+			<h3 class="listLink__title">{{ titleText }}</h3>
 		</div>
 		<div class="listLink__bottom">
 			<ul class="listLink__list">
-				<li class="listLink__item" v-for="label in minLabel" :key="label">
+				<li class="listLink__item" v-for="label in minLabelArray" :key="label">
 					<LabelS :labelText="label"></LabelS>
 				</li>
 			</ul>
 			<div class="listLink__date">
-				{{ date }}
+				{{ dateText }}
 			</div>
 		</div>
 	</div>
@@ -22,14 +22,7 @@ import LabelS from '../../../components/Atoms/Label/label_S.vue';
 
 export default {
 	components: { LabelS },
-	props: ['titleText', 'dateText', 'minLabelArray'],
-	data() {
-		return {
-			title: this.titleText,
-			date: this.dateText,
-			minLabel: this.minLabelArray,
-		};
-	},
+	props: { titleText: String, dateText: String, minLabelArray: Array },
 };
 </script>
 

@@ -23,7 +23,7 @@ import CloseIcon from '../../components/Atoms/Icon/closeIcon.vue';
 
 export default {
 	components: { HeadText, CardImage, DetailText, CloseIcon },
-	props: ['cardTitle', 'cardText', 'cardImage'],
+	props: { cardTitle: String, cardText: String, cardImage: String },
 	data() {
 		return {
 			modal: false,

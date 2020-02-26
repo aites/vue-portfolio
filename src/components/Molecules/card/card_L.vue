@@ -15,7 +15,7 @@ import DetailText from '../../../components/Atoms/Text/detailText.vue';
 
 export default {
 	components: { CardImageL, TitleText, DetailText },
-	props: ['cardText', 'cardImage'],
+	props: { cardText: String, cardImage: String },
 };
 </script>
 

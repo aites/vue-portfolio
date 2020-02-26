@@ -27,7 +27,7 @@ import IconMail from '../../components/Atoms/Icon/mailIcon.vue';
 
 export default {
 	components: { MenuLink, IconHome, IconProfile, IconProject, IconMail },
-	props: ['headTitle'],
+	props: { headTitle: String },
 	data() {
 		return {
 			menu: [

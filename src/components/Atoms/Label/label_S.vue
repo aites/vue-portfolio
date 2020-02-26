@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	props: ['labelText'],
+	props: { labelText: String },
 	data() {
 		return {
 			text: this.labelText,

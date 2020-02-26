@@ -19,7 +19,7 @@ import ListLink from '../../components/Molecules/Link/listLink.vue';
 
 export default {
 	components: { ListLink },
-	props: ['projectList'],
+	props: { projectList: Array },
 	data() {
 		return {
 			// projectArray: this.projectList,

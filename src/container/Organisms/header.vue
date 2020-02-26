@@ -15,7 +15,7 @@ import HeadMenu from '../../container/Organisms/headerMenu.vue';
 
 export default {
 	components: { MenuButton, HeadText, HeadMenu },
-	props: ['headTitle'],
+	props: { headTitle: String },
 	data() {
 		return {
 			title: this.headTitle,
