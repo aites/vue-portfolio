@@ -1,31 +1,31 @@
 <template>
-  <div class="labelSmall">
-    {{text}}
-  </div>
+	<div class="labelSmall">
+		{{ text }}
+	</div>
 </template>
 
 <script>
 export default {
-  props:['labelText'],
-  data() {
-    return{
-      text: this.labelText
-    }
-  },
-}
+	props: ['labelText'],
+	data() {
+		return {
+			text: this.labelText,
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>
-.labelSmall{
-  font-size: 12px;
-  font-weight: bold;
-  height: 24px;
-  line-height: 1;
-  border: 1px solid #DFDFDF;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 6px 8px;
-  background-color: #F7F7F7;
+.labelSmall {
+	font-size: 12px;
+	font-weight: bold;
+	height: 24px;
+	line-height: 1;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 6px 8px;
+	background-color: #f7f7f7;
 }
 </style>

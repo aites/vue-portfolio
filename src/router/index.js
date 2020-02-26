@@ -9,31 +9,30 @@ import Contact from '@/container/Templates/contact'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'top',
-      component: Top
-    },
-    {
-      path: '/project',
-      name: 'project',
-      component: Project
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: Profile
-    },
-    {
-      path: '/projectDetail',
-      name: 'project-detail',
-      component: ProjectDetail
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: Contact
-    },
-  ]
+	routes: [{
+			path: '/',
+			name: 'top',
+			component: Top
+		},
+		{
+			path: '/project',
+			name: 'project',
+			component: Project
+		},
+		{
+			path: '/profile',
+			name: 'profile',
+			component: Profile
+		},
+		{
+			path: '/projectDetail',
+			name: 'project-detail',
+			component: ProjectDetail
+		},
+		{
+			path: '/contact',
+			name: 'contact',
+			component: Contact
+		},
+	]
 })
