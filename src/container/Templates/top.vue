@@ -15,7 +15,7 @@ export default {
 	data() {
 		return {
 			title: 'ポートフォリオサイト',
-			imageData: 'project_1_pc.png',
+			imageData: 'top.jpg',
 			text: '左上のメニューをクリックしてください。',
 		};
 	},
