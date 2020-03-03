@@ -14,7 +14,7 @@
 			<ul class="detailList">
 				<li class="projectDetail__detailItem">
 					<p class="projectDetail__contentsTitle">使用言語</p>
-					{{ language }}
+					{{ language.join(',') }}
 				</li>
 				<li class="projectDetail__detailItem">
 					<p class="projectDetail__contentsTitle">規模感</p>
@@ -30,7 +30,7 @@
 				</li>
 				<li class="projectDetail__detailItem">
 					<p class="projectDetail__contentsTitle">開発環境</p>
-					{{ development }}
+					{{ development.join(',') }}
 				</li>
 			</ul>
 		</div>

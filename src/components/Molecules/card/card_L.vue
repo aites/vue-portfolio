@@ -2,7 +2,7 @@
 	<div class="cardLarge">
 		<CardImageL :imageName="cardImage"></CardImageL>
 		<div class="cardLarge__contents">
-			<TitleText :titleText="cardText"> </TitleText>
+			<TitleText :titleText="cardTitle"> </TitleText>
 			<DetailText :detailText="cardText"> </DetailText>
 		</div>
 	</div>
@@ -15,7 +15,7 @@ import DetailText from '../../../components/Atoms/Text/detailText.vue';
 
 export default {
 	components: { CardImageL, TitleText, DetailText },
-	props: { cardText: String, cardImage: String },
+	props: { cardTitle: String, cardText: String, cardImage: String },
 };
 </script>
 

@@ -7,7 +7,7 @@
 			:cardText="modalText"
 			:cardImage="modalImageData"
 		></Modal>
-		<CardL :cardTitle="title" :cardText="text" :cardImage="imageData"></CardL>
+		<CardL :cardTitle="cardTitle" :cardText="cardText" :cardImage="imageData"></CardL>
 		<ul class="profile__slider">
 			<li class="profile__sliderItem" v-for="(card, index) of this.cardData" :key="index">
 				<CardS
@@ -26,7 +26,7 @@ import Header from '../../container/Organisms/header.vue';
 import CardL from '../../components/Molecules/card/card_L.vue';
 import CardS from '../../components/Molecules/card/card_S.vue';
 import Modal from '../../container/Organisms/modal.vue';
-import profileData from '../../firebase_data';
+import profileData from '../../firebase_profile';
 const data = new profileData();
 
 export default {
@@ -35,26 +35,10 @@ export default {
 	data() {
 		return {
 			title: 'プロフィール',
-			text: 'プロフィールのテキスト',
-			imageData: 'project_1_pc.png',
+			cardTitle: '荒木　杏久里',
+			cardText: 'ユニークネームを持っている、フロントエンドエンジニア。',
+			imageData: '',
 			cardData: data.getData(),
-			// cardData: [
-			//   {
-			//     title: 'ボルダリング',
-			//     text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
-			//     imageData: 'hobby/hobby_1.png',
-			//   },
-			//   {
-			//     title: 'ポイント',
-			//     text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
-			//     imageData: 'hobby/hobby_2.png',
-			//   },
-			//   {
-			//     title: 'ゲーム',
-			//     text: 'プロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキストプロフィールのテキスト',
-			//     imageData: 'hobby/hobby_3.png',
-			//   },
-			// ],
 			modalTitle: '',
 			modalText: '',
 			modalImageData: '',
