@@ -35,7 +35,7 @@ export default class data_project {
 					language: ['html', 'css', 'scss', 'javaScript', 'jQuery'],
 					scale: '大規模案件',
 					term: '2018/09 ~ 2020/01',
-					url: 'https://job.rikunabi.com/',
+					url: '企業側のページのためURLなし',
 					development: ['npm', 'gulp', 'git'],
 				},
 			},
@@ -58,7 +58,7 @@ export default class data_project {
 				date: '2016/08 ~ 2017/04',
 				label: ['html', 'css', 'scss', 'javaScript', 'jQuery', 'Illustrator', 'PhotoShop', 'apache'],
 				image: 'project_3.jpg',
-				info: 'デジタルハリウッド STUDIO横浜に半年間通い、その後自習ルームで制作活動をしていました。',
+				info: 'デジタルハリウッド STUDIO横浜に半年間通い、その後自習ルームで制作活動をしていました。卒業制作では、「./卒制＿荒木杏久里/荒木＿（株）七福＿Webページ/index.html」のページを作成しました。',
 				detail: {
 					language: ['html', 'css', 'scss', 'javaScript', 'jQuery'],
 					scale: '社会人スクール',

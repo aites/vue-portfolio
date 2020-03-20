@@ -1,30 +1,48 @@
 <template>
-	<div class="contact">
-		<Header :headTitle="title"></Header>
-		<p class="contact__text">{{ text }}</p>
-	</div>
+  <div class="contact">
+    <Header :headTitle="title" class="js-header"></Header>
+    <div class="contact__iframe" :style="{height: iframeHeight}">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScvF0pqd82kaaT-WyO7OYe4NMNcyHilcnqyCL--RNgKO4XYBA/viewform?embedded=true"
+        width="100%"
+        :height="iframeHeight"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+      >読み込んでいます…</iframe>
+    </div>
+  </div>
 </template>
 
 <script>
 import Header from '../../container/Organisms/header.vue';
 
 export default {
-	components: { Header },
-	data() {
-		return {
-			title: 'お問い合わせ',
-			text: 'GoogleFormを設置予定',
-		};
-	},
+  components: { Header },
+  data() {
+    return {
+      title: 'お問い合わせ',
+      iframeHeight: '',
+    };
+  },
+  created() {
+    const displayHeight = window.innerHeight;
+    const hedder = document.querySelectorAll('.js-header');
+    const hedderHeight = hedder[0].clientHeight;
+    this.iframeHeight = `${displayHeight - hedderHeight - 16}px`;
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .header {
-	display: flex;
+  display: flex;
 }
 .contact__text {
-	text-align: left;
-	margin-top: 8px;
+  text-align: left;
+  margin-top: 8px;
+}
+iframe {
+  height: 100%;
 }
 </style>
