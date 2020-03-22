@@ -58,7 +58,7 @@ export default class data_project {
 				date: '2019/08 ~ 2019/10',
 				label: ['html', 'css', 'scss', 'javaScript', 'Vue.js'],
 				image: 'free-chat.png',
-				info: 'Vue.jsを使用してチャットサイトを作成しました。。フロントとバックで分けてvuetifyを使用して作成しました。',
+				info: 'Vue.jsを使用してプライベートでチャットサイトを作成しました。フロントとバックで作業分担を行い、実装しました。またvuetifyを使用して作成しました。',
 				detail: {
 					language: ['html', 'css', 'scss', 'javaScript', 'Vue.js'],
 					scale: '2人で実装',
