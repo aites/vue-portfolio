@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <Header :headTitle="title" class="js-header"></Header>
+    <Header :headTitle="title"></Header>
     <div class="contact__iframe" :style="{height: iframeHeight}">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLScvF0pqd82kaaT-WyO7OYe4NMNcyHilcnqyCL--RNgKO4XYBA/viewform?embedded=true"
@@ -27,9 +27,7 @@ export default {
   },
   created() {
     const displayHeight = window.innerHeight;
-    const hedder = document.querySelectorAll('.js-header');
-    const hedderHeight = hedder[0].clientHeight;
-    this.iframeHeight = `${displayHeight - hedderHeight - 16}px`;
+    this.iframeHeight = `${displayHeight - 60}px`;
   },
 };
 </script>

@@ -54,6 +54,19 @@ export default class data_project {
 				},
 			},
 			{
+				title: 'Freeオープンチャット',
+				date: '2019/08 ~ 2019/10',
+				label: ['html', 'css', 'scss', 'javaScript', 'Vue.js'],
+				image: 'free-chat.png',
+				info: 'Vue.jsを使用してチャットサイトを作成しました。。フロントとバックで分けてvuetifyを使用して作成しました。',
+				detail: {
+					language: ['html', 'css', 'scss', 'javaScript', 'Vue.js'],
+					scale: '2人で実装',
+					term: '2017/04 ~ 2018/02',
+					url: 'https://freeopenchat.com/',
+					development: ['npm', 'firebase'],
+				},
+			}, {
 				title: 'デジタルハリウッド STUDIO横浜',
 				date: '2016/08 ~ 2017/04',
 				label: ['html', 'css', 'scss', 'javaScript', 'jQuery', 'Illustrator', 'PhotoShop', 'apache'],

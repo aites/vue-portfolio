@@ -48,10 +48,12 @@ export default {
   },
   methods: {
     openModal(title, text, image) {
-      this.modalTitle = title;
-      this.modalText = text;
-      this.modalImageData = image;
-      this.$refs.modalEvent.openModal();
+      if (window.innerWidth <= 500) {
+        this.modalTitle = title;
+        this.modalText = text;
+        this.modalImageData = image;
+        this.$refs.modalEvent.openModal();
+      }
     },
   },
 };
@@ -61,16 +63,31 @@ export default {
 .profile__title {
   margin-top: 16px;
 }
-.profile__slider {
-  display: flex;
-  margin-top: 8px;
-  overflow: scroll;
-  position: relative;
-  left: -8px;
-  width: 100vw;
+// SP画面
+@media all and (max-width: 500px) {
+  .profile__slider {
+    display: flex;
+    margin-top: 8px;
+    overflow: scroll;
+    position: relative;
+    left: -8px;
+    width: 100vw;
+  }
+  .profile__sliderItem {
+    min-width: 42%;
+    flex-basis: 42%;
+  }
 }
-.profile__sliderItem {
-  min-width: 42%;
-  flex-basis: 42%;
+// PC画面
+@media all and (min-width: 501px) {
+  .profile__slider {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .profile__sliderItem {
+    min-width: 50%;
+    flex-basis: 50%;
+  }
 }
 </style>

@@ -56,18 +56,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media all and (max-width: 500px) {
-  .header {
-    display: flex;
-    padding-top: 16px;
-    margin-bottom: 16px;
-    position: relative;
-  }
-  .header__menu {
-    margin-top: 2px;
-  }
-  .header__menuIcon {
-    pointer-events: none;
-  }
+.header {
+  display: flex;
+  padding-top: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.header__menu {
+  margin-top: 2px;
+}
+.header__menuIcon {
+  pointer-events: none;
 }
 </style>

@@ -2,6 +2,7 @@
   <div class="top">
     <Header :headTitle="title"></Header>
     <p class="top__text">{{ text }}</p>
+    <p class="top__text">左上のメニューから各項目に遷移できます。</p>
     <div class="top__image">
       <MainVisual :image="imageData"></MainVisual>
     </div>
@@ -19,7 +20,7 @@ export default {
       title: 'ポートフォリオサイト',
       imageData: 'top.jpg',
       text:
-        '荒木杏久里のポートフォリオサイトです。プロフィールとフロントエンドエンジニアとして携わったプロジェクトが閲覧できます。左上のメニューから各項目に遷移できます。',
+        '荒木杏久里のポートフォリオサイトです。プロフィールとフロントエンドエンジニアとして携わったプロジェクトが閲覧できます。',
     };
   },
 };
@@ -37,5 +38,8 @@ export default {
   margin-top: 8px;
   font-size: 12px;
   line-height: 1.3;
+  @media all and (min-width: 501px) {
+    font-size: 16px;
+  }
 }
 </style>
